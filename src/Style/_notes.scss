@@ -1,0 +1,57 @@
+body{
+    .notes-card {
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        padding: 16px;
+        background-color: #ffffff;
+        width: 50%;
+      }
+      .notes-textfield{
+        width: 50%;
+      }
+      
+      .notes-header {
+        .MuiCardHeader-title {
+          font-size: 1.2rem;
+          font-weight: bold;
+        }
+      
+        .MuiCardHeader-subheader {
+          font-size: 0.9rem;
+          color: #757575;
+        }
+      }
+      
+      .notes-avatar {
+        background-color: #4caf50;
+        color: white;
+      }
+      
+      .notes-textfield {
+        .MuiOutlinedInput-root {
+          border-radius: 8px;
+        }
+      
+        .MuiInputBase-input {
+          font-size: 0.9rem;
+        }
+      }
+
+      .advices-card{
+        width: 50%;
+      }
+      .advices-action{
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        // align-items: flex-start;
+        // justify-content: flex-start;
+      }
+       
+      // .card-header{
+      //   display: flex;
+      //   justify-content: space-evenly;
+      // }
+      
+      
+}

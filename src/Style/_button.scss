@@ -1,0 +1,22 @@
+body{
+    .custom-button {
+        text-transform: none; // Prevents uppercase transformation
+        font-weight: 500;
+        font-size: 15px;
+        padding: 20px;
+        height: 30px;
+        border-radius: 10px;
+        background-color:#4BD69E ;
+        color: black;
+        
+      }
+      .custom-buttons{
+        // font-weight: 500;
+        font-size: 15px;
+        padding: 20px;
+        height: 30px;
+        border-radius: 10px;
+        border:1px solid #4BD69E ;
+        color:#4BD69E ;
+      }
+}

@@ -1,0 +1,247 @@
+{/* <TableContainer className="table-container">
+      <Table className='table'>
+        <TableHead className='table-head'>
+          <TableRow className='table-row'>
+            <TableCell>Patient Details</TableCell>
+            <TableCell>Patient ID</TableCell>
+            <TableCell>Contact</TableCell>
+            <TableCell>Visit Type</TableCell>
+            <TableCell>Slot</TableCell>
+            <TableCell>Payment Status</TableCell>
+            <TableCell>Status / Actions</TableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {sampleData.map((row, index) => (
+            <TableRow key={index}>
+              <TableCell>
+                <Typography variant="subtitle2" className="patient-name">
+                  {row.name}, {row.gender}, {row.age}y
+                </Typography>
+                <Typography variant="body2" className="last-visit">
+                  Last Visit: {row.lastVisit}
+                </Typography>
+              </TableCell>
+              <TableCell>{row.patientId}</TableCell>
+              <TableCell>{row.contact}</TableCell>
+              <TableCell>
+                <Typography className="visit-type">
+                  <span className="visit-icon">🚶‍♂️</span> {row.visitType}
+                </Typography>
+              </TableCell>
+              <TableCell>
+                <Typography className="slot-time">{row.slotTime}</Typography>
+                <Typography className="slot-date">{row.slotDate}</Typography>
+              </TableCell>
+              <TableCell>{row.paymentStatus}</TableCell>
+              <TableCell>
+                <Button
+                  variant="text"
+                  startIcon={<ArrowForwardIcon />}
+                  className="start-visit-btn"
+                >
+                  Start Visit
+                </Button>
+                <IconButton className="action-menu">
+                  <MoreVertIcon />
+                </IconButton>
+              </TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </TableContainer> */}
+
+
+
+
+
+NotesEditor code--
+
+// import React, { useState,  useRef   } from "react";
+// import {
+//   Box,
+//   Button,
+//   ButtonGroup,
+//   IconButton,
+//   TextField,
+//   Checkbox,
+//   FormControlLabel
+// } from "@mui/material";
+// import {
+//   FormatBold,
+//   FormatItalic,
+//   FormatListBulleted,
+//   ArrowDropDown,
+//   Fullscreen,
+// } from "@mui/icons-material";
+// import '../Style/_noteseditor.scss';
+
+// const NotesEditor = () => {
+
+//   const editorRef = useRef(null);
+
+//     // Apply formatting to the selected text
+//     const applyFormat = (command) => {
+//       document.execCommand(command, false, null);
+//       editorRef.current.focus();
+//     };
+
+//   // const [text, setText] = useState("");
+//   // const [isBold, setIsBold] = useState(false);
+//   // const [isItalic, setIsItalic] = useState(false);
+
+//   // const handleBold = () => setIsBold(!isBold);
+//   // const handleItalic = () => setIsItalic(!isItalic);
+
+//   // const handleTextChange = (event) => setText(event.target.value);
+
+//   return (
+//     <Box className="notes-editor">
+//       <Box className="toolbar">
+//         <ButtonGroup variant="none">
+//           <Button
+//             onClick={() => applyFormat("bold")}
+//             // className={isBold ? "active" : ""}
+//             style={{color:"black"}}
+//           >
+//             <FormatBold />
+//           </Button>
+//           <Button
+//          onClick={() => applyFormat("italic")}
+//             // className={isItalic ? "active" : ""}
+//             style={{color:"black"}}
+//           >
+//             <FormatItalic style={{color:"black"}} />
+//           </Button>
+//           <Button
+//            onClick={() => applyFormat("insertUnorderedList")}
+//           >
+//             <FormatListBulleted style={{color:"black"}} />
+//           </Button>
+//           <Button>
+//             <ArrowDropDown style={{color:"black"}}/>
+//           </Button>
+//         </ButtonGroup>
+//         <IconButton>
+//           <Fullscreen />
+//         </IconButton>
+//       </Box>
+//       {/* <TextField
+//         inputRef={editorRef}
+//        contentEditable
+//         multiline
+//         rows={6}
+//         fullWidth
+//         variant="outlined"
+//         placeholder="Enter your notes here..."
+//         value={text}
+//         // onChange={handleTextChange}
+//         InputProps={{
+//           // style: {
+//           //   fontWeight: isBold ? "bold" : "normal",
+//           //   fontStyle: isItalic ? "italic" : "normal",
+//           // },
+//         }}
+//       /> */}
+//        <TextField
+//         inputRef={editorRef}
+//         variant="outlined"
+//         multiline
+//         fullWidth
+//         className="editor"
+//         placeholder="Enter your notes here..."
+//         InputProps={{
+//           inputProps: {
+//             contentEditable: true, // Enables rich text editing
+//             suppressContentEditableWarning: true, // Suppresses React warnings for contentEditable
+//           },
+//         }}
+//       />
+//       <div className="advices-action">
+//                   <FormControlLabel
+//                     control={<Checkbox />}
+//                     label="Advised Home isolation and treatment as of now."
+//                   />
+//                    <FormControlLabel
+//                     control={<Checkbox />}
+//                     label="Streaming gargling"
+//                   />
+//                    <FormControlLabel
+//                     control={<Checkbox />}
+//                     label="Dr WhatsApp number +91 9771221270"
+//                   />
+//                 </div>
+//     </Box>
+//   );
+// };
+
+// export default NotesEditor;
+
+TableComponent--
+
+// const sampleData = [
+  //   {
+  //     name: 'Wade Warren',
+  //     gender: 'M',
+  //     age: 30,
+  //     lastVisit: '10 Dec 2024',
+  //     patientId: 2116,
+  //     contact: '+91 9771844566',
+  //     visitType: 'consultation',
+  //     slotTime: '05:00 PM',
+  //     slotDate: '12 Dec 2024',
+  //     paymentStatus: '---',
+  //   },
+  //   {
+  //     name: 'Wade Warren',
+  //     gender: 'M',
+  //     age: 30,
+  //     lastVisit: '10 Dec 2024',
+  //     patientId: 2116,
+  //     contact: '+91 9771844566',
+  //     visitType: 'consultation',
+  //     slotTime: '05:00 PM',
+  //     slotDate: '12 Dec 2024',
+  //     paymentStatus: '---',
+  //   },
+  //   {
+  //     name: 'Wade Warren',
+  //     gender: 'M',
+  //     age: 30,
+  //     lastVisit: '10 Dec 2024',
+  //     patientId: 2116,
+  //     contact: '+91 9771844566',
+  //     visitType: 'consultation',
+  //     slotTime: '05:00 PM',
+  //     slotDate: '12 Dec 2024',
+  //     paymentStatus: '---',
+  //   },
+  // ];
+
+  // const columns = [
+  //   { field: "id", headerName: "ID", width: 100 },
+  //   { field: "name", headerName: "Name", width: 200 },
+  //   { field: "age", headerName: "Age", width: 100 },
+  //   { field: "email", headerName: "Email", width: 250 },
+  // ];
+
+  // const rows = [
+  //   { id: 1, name: "John Doe", age: 25, email: "john.doe@example.com" },
+  //   { id: 2, name: "Jane Smith", age: 30, email: "jane.smith@example.com" },
+  //   { id: 3, name: "Alice Brown", age: 35, email: "alice.brown@example.com" },
+  //   { id: 4, name: "Bob White", age: 28, email: "bob.white@example.com" },
+  // ];
+
+  
+      {/* <div className="reusable-table">
+      <DataGrid
+        rows={rows}
+        columns={columns}
+        pageSize={pageSize}
+        rowsPerPageOptions={[5, 10, 20]}
+        checkboxSelection
+        disableSelectionOnClick
+        className="data-grid"
+      />
+    </div> */}

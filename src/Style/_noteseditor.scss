@@ -1,0 +1,74 @@
+body{
+    .notes-editor {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        padding: 8px;
+        background-color: #ffffff;
+        width: 50%;
+        margin: 0 auto;
+      
+        .toolbar {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+      
+          .MuiButtonGroup-root {
+            .MuiButton-root {
+              min-width: 36px;
+              padding: 6px;
+      
+              &.active {
+                background-color: #e0e0e0;
+              }
+      
+              .MuiSvgIcon-root {
+                font-size: 1.2rem;
+              }
+            }
+          }
+      
+          .MuiIconButton-root {
+            padding: 6px;
+          }
+        }
+      
+        .MuiOutlinedInput-root {
+          border-radius: 4px;
+          padding: 8px;
+          font-size: 1rem;
+        }
+      }
+      .advices-action{
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        border: black;
+      }
+      .custom{
+        color: aquamarine;
+      }
+      .editor {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 10px;
+        min-height: 100px;
+        font-size: 16px;
+        color: #333;
+        outline: none;
+    
+        &:focus {
+          border-color: darkgrey;
+        }
+    
+        &::placeholder {
+          color: #aaa;
+          font-style: italic;
+        }
+      }
+    
+     
+      
+}

@@ -1,0 +1,201 @@
+body{
+  // .table-container {
+  //   padding: 16px;
+  //   margin: 15px;
+  //   width: 100%;
+  //   background-color: #ffffff;
+  //   border-radius: 10px;
+  //   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+// }
+  
+.table{
+  margin: 0 auto;
+  // padding: 10px;
+  border-radius: 10px 10px 0 0; 
+  width: 80%;
+}
+    .MuiTableCell-root {
+      padding: 12px 16px;
+      font-size: 14px;
+    }
+  
+    .patient-name {
+      font-weight: 600;
+      color: #1e88e5;
+    }
+  
+    .last-visit {
+      font-size: 12px;
+      color: #757575;
+    }
+  
+    .visit-type {
+      display: flex;
+      align-items: center;
+      color: #4caf50;
+  
+      .visit-icon {
+        margin-right: 8px;
+      }
+    }
+  
+    .slot-time {
+      font-weight: bold;
+      color: #4caf50;
+    }
+  
+    .slot-date {
+      font-size: 12px;
+      color: #757575;
+    }
+  
+    .start-visit-btn {
+      color: #4caf50;
+      font-weight: bold;
+    }
+  
+    .action-menu {
+      color: #757575;
+    }
+  
+  .table-head{
+    background-color: #e0e0e0;
+    border-radius: 20px;
+  }
+
+  .reusable-table {
+    height: 400px;
+    width: 100%;
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 16px;
+  
+    .data-grid {
+      .MuiDataGrid-root {
+        border: none;
+      }
+  
+      .MuiDataGrid-cell {
+        font-size: 0.9rem;
+      }
+  
+      .MuiDataGrid-columnHeaders {
+        background-color: #f5f5f5;
+        font-weight: bold;
+      }
+  
+      .MuiDataGrid-footerContainer {
+        border-top: 1px solid #e0e0e0;
+      }
+    }
+  }
+
+  .reusable-table {
+    .tables{
+      width: 80%;
+      margin: 0 auto;
+
+    }
+
+    .table-header-cell {
+      font-weight: bold;
+      background-color: #f5f5f5;
+      border-radius: 10px 10px 0 0;
+      color: #333;
+    }
+  
+    .table-row:nth-child(even) {
+      // background-color: #f9f9f9;
+    }
+  
+    .table-row:hover {
+      // background-color: #e0f7fa;
+    }
+  
+    .table-cell {
+      padding: 16px;
+    }
+  }
+  .filter-input {
+    width: 200px;
+    .MuiOutlinedInput-root {
+      border-radius: 8px; // Rounded corners
+      // border: 1px solid #ccc; // Light gray border
+      background-color: #fff; // White background
+    }
+
+    .MuiOutlinedInput-notchedOutline {
+      border: 1px solid #4caf50; // Remove the default border
+    }
+    &:hover {
+      border-color: #4caf50 // Darker gray on hover
+    }
+
+    &.Mui-focused {
+      border-color: #4caf50; // Green border when focused
+   
+    }
+    .MuiInputLabel-root {
+      color: #4caf50; // Default label color
+      font-size: 14px; // Label font size
+  
+      &.Mui-focused {
+        color: #4caf50; // Custom label color when focused
+        border: #4caf50;
+      }
+    }
+
+  }
+  .filter-btn{
+    display: flex;
+    align-items: center;
+    justify-content:flex-end;
+    margin-right: 10rem;
+  }
+  .sort-btn{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .btn{
+    text-transform: none; // Prevents uppercase transformation
+    font-weight: 500;
+    font-size: 15px;
+    padding: 20px;
+    height: 30px;
+    border-radius: 10px;
+    background-color:#4BD69E ;
+    color:white;
+  }
+  .custom-radio {
+    .MuiRadio-root {
+      color: #b0bec5; // Default color for the unselected radio button
+    }
+  
+    .MuiRadio-root.Mui-checked {
+      color: #4caf50; // Custom color for the selected radio button
+    }
+  
+    .MuiRadio-root:hover {
+      background-color: rgba(76, 175, 80, 0.1); // Light green hover effect
+    }
+  
+    .MuiFormControlLabel-label {
+      font-weight: bold;
+      color: #37474f; // Custom label color
+    }
+  }
+
+  .apply-btn{
+    background-color: #4BD69E;
+    color:white;
+  }
+  .cancel-btn{
+    color:white;
+    background-color: red;
+  }
+  
+}
+  

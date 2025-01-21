@@ -1,0 +1,59 @@
+body{
+    .symptoms-container {
+        width: 70%;
+        // max-width: 400px;
+        margin: 20px auto;
+        border: 1px solid gray;
+        border-radius: 10px;
+        font-family: Arial, sans-serif;
+        box-shadow: 2px 2px gray ;
+      
+        .title {
+        //   margin-bottom: 10px;
+          margin: 10px;
+          font-weight: bold;
+          text-align: left;
+        }
+      
+        .search-input {
+          margin: 10px;
+          width: 90%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 20px;
+        }
+      
+        .dropdown {
+          position: absolute;
+          width: 62%;
+        //   max-width: 400px;
+          z-index: 10;
+          border: 1px solid #ddd;
+          border-radius: 5px;
+          margin-left: 15px;
+      
+          .dropdown-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+      
+            .header-text {
+              font-weight: bold;
+            }
+          }
+      
+          .symptoms-list {
+            max-height: 200px;
+            overflow-y: auto;
+      
+            .symptom-item {
+              padding: 2px;
+            }
+          }
+        }
+      }
+      
+}
