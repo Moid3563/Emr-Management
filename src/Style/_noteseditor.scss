@@ -58,7 +58,14 @@ body{
         font-size: 16px;
         color: #333;
         outline: none;
-    
+        text-align: left;
+        
+        &:-webkit-full-screen {
+          background-color: #fff;
+        }
+        &:fullscreen {
+          background-color: #fff;
+        }
         &:focus {
           border-color: darkgrey;
         }

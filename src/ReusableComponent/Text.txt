@@ -245,3 +245,466 @@ TableComponent--
         className="data-grid"
       />
     </div> */}
+
+     <Box className="medications-container">
+      <Typography variant="h6" className="header">
+        Medications
+      </Typography>
+
+      {/* Search Input */}
+      <Box className="autocomplete-container">
+        <TextField
+          variant="outlined"
+          placeholder="Search typing Medicines"
+          fullWidth
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
+      </Box>
+
+      {/* Frequently Prescribed Dropdown */}
+      <Autocomplete
+        options={filterMedications(frequentlyPrescribed)}
+        getOptionLabel={(option) => option.label}
+        renderOption={(props, option) => (
+          <ListItem {...props} className="list-item">
+            <Box className="pill-icon">Rx</Box>
+            <ListItemText
+              primary={option.label}
+              secondary={option.subtitle}
+            />
+          </ListItem>
+        )}
+        renderInput={(params) => (
+          <TextField {...params} label="Frequently Prescribed" />
+        )}
+        className="dropdown"
+      />
+
+      {/* Suggested Medications Dropdown */}
+      <Autocomplete
+        options={filterMedications(suggestedMedications)}
+        getOptionLabel={(option) => option.label}
+        renderOption={(props, option) => (
+          <ListItem {...props} className="list-item">
+            <Box className="pill-icon">Rx</Box>
+            <ListItemText
+              primary={option.label}
+              secondary={option.subtitle}
+            />
+          </ListItem>
+        )}
+        renderInput={(params) => (
+          <TextField {...params} label="Suggested Medications" />
+        )}
+        className="dropdown"
+      />
+    </Box>
+
+    <Box className="medications-container">
+      <Typography variant="h6" className="header">
+        Medications
+      </Typography>
+
+      {/* Search Input */}
+      <Box className="autocomplete-container">
+        <TextField
+          variant="outlined"
+          placeholder="Search typing Medicines"
+          fullWidth
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
+      </Box>
+
+      {/* Combined Dropdown */}
+      <Box className="dropdown">
+        <Box className="dropdown-section">
+          <Typography className="section-title">FREQUENTLY</Typography>
+          <List className="medication-list">
+            {filteredFrequently.map((item, index) => (
+              <ListItem key={index} className="list-item">
+                <Box className="pill-icon">Rx</Box>
+                <ListItemText
+                  primary={item.label}
+                  secondary={item.subtitle}
+                />
+              </ListItem>
+            ))}
+          </List>
+        </Box>
+
+        <Box className="dropdown-section">
+          <Typography className="section-title">SUGGESTED</Typography>
+          <List className="medication-list">
+            {filteredSuggested.map((item, index) => (
+              <ListItem key={index} className="list-item">
+                <Box className="pill-icon">Rx</Box>
+                <ListItemText
+                  primary={item.label}
+                  secondary={item.subtitle}
+                />
+              </ListItem>
+            ))}
+          </List>
+        </Box>
+      </Box>
+    </Box>
+
+    <Box className="dropdown-container">
+        {/* Frequently Section */}
+        <Box className="dropdown-section frequently">
+          <Box className="section-header">
+            <Typography className="section-title">FREQUENTLY</Typography>
+            <Typography className="section-subtitle">prescribed by you</Typography>
+          </Box>
+          <List className="medication-list">
+            {filteredFrequently.map((item, index) => (
+              <ListItem key={index} className="list-item">
+                <Box className="pill-icon">Rx</Box>
+                <ListItemText
+                  primary={item.label}
+                  secondary={item.subtitle}
+                />
+              </ListItem>
+            ))}
+          </List>
+        </Box>
+
+        {/* Suggested Section */}
+        <Box className="dropdown-section suggested">
+          <Box className="section-header">
+            <Typography className="section-title">SUGGESTED</Typography>
+            <Typography className="section-subtitle">
+              for Symptoms/Diagnosis Entered
+            </Typography>
+          </Box>
+          <List className="medication-list">
+            {filteredSuggested.map((item, index) => (
+              <ListItem key={index} className="list-item">
+                <Box className="pill-icon">Rx</Box>
+                <ListItemText
+                  primary={item.label}
+                  secondary={item.subtitle}
+                />
+              </ListItem>
+            ))}
+          </List>
+        </Box>
+      </Box>
+
+      // <IconButton
+// className="close-button"
+// onClick={() => setIsDropdownOpen(false)}
+// >
+// <CloseIcon />
+// </IconButton>
+
+<Box className="medications-container" ref={dropdownRef}>
+      <Typography variant="h6" className="header">
+        Medications
+      </Typography>
+
+      {/* Search Input */}
+      <Box className="search-container">
+        <TextField
+          variant="outlined"
+          placeholder="Search typing Medicines"
+          fullWidth
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          onFocus={() => setIsDropdownOpen(true)}
+        />
+      </Box>
+
+      {/* Dropdown Content */}
+      {isDropdownOpen && (
+        <Box className="dropdown-container">
+          {/* Frequently Section */}
+          <Box className="dropdown-section frequently">
+            <Box className="section-header">
+              <Typography className="section-title">FREQUENTLY</Typography>
+              <Typography className="section-subtitle">
+                prescribed by you
+              </Typography>
+            </Box>
+            <List className="medication-list">
+              {filteredFrequently.map((item, index) => (
+                <ListItem key={index} className="list-item">
+                  <Box className="pill-icon">Rx</Box>
+                  <ListItemText
+                    primary={item.label}
+                    secondary={item.subtitle}
+                  />
+                </ListItem>
+              ))}
+            </List>
+          </Box>
+
+          {/* Suggested Section */}
+          <Box className="dropdown-section suggested">
+            <Box className="section-header">
+              <Typography className="section-title">SUGGESTED</Typography>
+              <Typography className="section-subtitle">
+                for Symptoms/Diagnosis Entered
+              </Typography>
+              
+            </Box>
+            <List className="medication-list">
+              {filteredSuggested.map((item, index) => (
+                <ListItem key={index} className="list-item">
+                  <Box className="pill-icon">Rx</Box>
+                  <ListItemText
+                    primary={item.label}
+                    secondary={item.subtitle}
+                  />
+                </ListItem>
+              ))}
+            </List>
+          </Box>
+        </Box>
+      )}
+    </Box>
+
+     {/* <Box className="medications-container" ref={dropdownRef}>
+      <Typography variant="h6" className="header">
+        Medications
+      </Typography>
+
+      <Box className="search-container">
+        <Autocomplete
+          options={combinedOptions}
+          getOptionLabel={(option) => `${option.label} (${option.subtitle})`}
+          onChange={handleAutocompleteChange}
+          renderInput={(params) => (
+            <TextField
+              {...params}
+              variant="outlined"
+              placeholder="Search typing Medicines"
+              fullWidth
+              onFocus={() => setIsDropdownOpen(true)}
+            />
+          )}
+        />
+      </Box>
+
+      {isDropdownOpen && (
+        <Box className="dropdown-container">
+          <Typography className="section-title">Results</Typography>
+          <List>
+            {combinedOptions
+              .filter((item) =>
+                item.label.toLowerCase().includes(searchTerm.toLowerCase())
+              )
+              .map((item, index) => (
+                <ListItem key={index} className="list-item">
+                  <Box className="pill-icon">Rx</Box>
+                  <ListItemText
+                    primary={item.label}
+                    secondary={item.subtitle}
+                  />
+                </ListItem>
+              ))}
+          </List>
+        </Box>
+      )}
+    </Box> */}
+
+
+    Fullscreen Icon 
+
+  const [isFullscreen, setIsFullscreen] = useState(false);
+
+      {/* <IconButton onClick={toggleFullscreen}>
+          {isFullscreen ? <FullscreenExit /> : <Fullscreen />}
+        </IconButton> */}
+
+        // Toggle fullscreen mode
+  const toggleFullscreen = () => {
+    if (!isFullscreen) {
+      if (containerRef.current.requestFullscreen) {
+        containerRef.current.requestFullscreen();
+      } else if (containerRef.current.webkitRequestFullscreen) {
+        containerRef.current.webkitRequestFullscreen();
+      } else if (containerRef.current.msRequestFullscreen) {
+        containerRef.current.msRequestFullscreen();
+      }
+    } else {
+      if (document.fullscreenElement || document.webkitFullscreenElement || document.msFullscreenElement) {
+        if (document.exitFullscreen) {
+          document.exitFullscreen();
+        } else if (document.webkitExitFullscreen) {
+          document.webkitExitFullscreen();
+        } else if (document.msExitFullscreen) {
+          document.msExitFullscreen();  
+        }
+      }
+    }
+    setIsFullscreen(!isFullscreen);
+  };
+
+Symptoms Autocomplete
+
+ {/* <Box className="symptoms-container">
+      <Typography variant="h6" className="title">
+        Symptoms
+      </Typography>
+      <Autocomplete
+        multiple
+        options={symptoms}
+        value={selectedSymptoms}
+        onChange={(event, newValue) => setSelectedSymptoms(newValue)}
+        renderInput={(params) => (
+          <TextField
+            {...params}
+            variant="outlined"
+            placeholder="Search typing Symptoms/Chief Complaints"
+            className="search-input"
+          />
+        )}
+        fullWidth
+      />
+    </Box> */}
+
+
+
+
+    import React, { useState, useRef, useEffect } from "react";
+import {
+  TextField,
+  List,
+  ListItem,
+  ListItemText,
+  Typography,
+  Box,
+  Paper,
+} from "@mui/material";
+import "../Style/_symptoms.scss";
+
+const frequentlyPrescribed = [
+  "Zifi 200 Tablet",
+  "Dolo",
+  "Calpol",
+  "Omez",
+  "Pantop",
+];
+
+const suggestedMedications = [
+  "Nitrocin Spray",
+  "Sofromycin",
+  "Paracetamol",
+  "Dulcoflex",
+  "Volini Spray",
+];
+
+const SearchSymptom = () => {
+  const [searchTerm, setSearchTerm] = useState("");
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const dropdownRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
+  const handleInputChange = (e) => {
+    const value = e.target.value;
+    setSearchTerm(value);
+    setIsDropdownOpen(true);
+  };
+
+  const handleSelectMedication = (medication) => {
+    setSearchTerm(medication);
+    setIsDropdownOpen(false);
+  };
+
+  const filteredFrequently = frequentlyPrescribed.filter((med) =>
+    med.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+  const filteredSuggested = suggestedMedications.filter((med) =>
+    med.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  return (
+    <Box className="medications-container" ref={dropdownRef}>
+      <Typography variant="h6" className="header">
+        Medications
+      </Typography>
+      <Box className="search-container">
+        <TextField
+          variant="outlined"
+          placeholder="Search typing Medicines"
+          fullWidth
+          value={searchTerm}
+          onChange={handleInputChange}
+          onFocus={() => setIsDropdownOpen(true)}
+        />
+      </Box>
+      {isDropdownOpen && (
+        <Box className="dropdown-container" style={{ display: "flex" }}>
+          {/* Frequently Section */}
+          <Box className="dropdown-section" style={{ flex: 1, marginRight: "10px" }}>
+            <Typography className="section-title">FREQUENTLY</Typography>
+            <List className="medication-list">
+              {filteredFrequently.map((med, index) => (
+                <ListItem
+                  key={index}
+                  className="list-item"
+                  onClick={() => handleSelectMedication(med)}
+                  style={{ cursor: "pointer" }}
+                >
+                  <Box className="pill-icon">Rx</Box>
+                  <ListItemText primary={med} />
+                </ListItem>
+              ))}
+            </List>
+          </Box>
+          {/* Suggested Section */}
+          <Box className="dropdown-section" style={{ flex: 1 }}>
+            <Typography className="section-title">SUGGESTED</Typography>
+            <List className="medication-list">
+              {filteredSuggested.map((med, index) => (
+                <ListItem
+                  key={index}
+                  className="list-item"
+                  onClick={() => handleSelectMedication(med)}
+                  style={{ cursor: "pointer" }}
+                >
+                  <Box className="pill-icon">Rx</Box>
+                  <ListItemText primary={med} />
+                </ListItem>
+              ))}
+            </List>
+          </Box>
+        </Box>
+      )}
+    </Box>
+  );
+};
+
+export default SearchSymptom;
+
+
+// const frequentlyPrescribed = [
+//   "Zifi 200 Tablet",
+//   "Dolo",
+//   "Calpol",
+//   "Omez",
+//   "Pantop",
+// ];
+
+// const suggestedMedications = [
+//   "Nitrocin Spray",
+//   "Sofromycin",
+//   "Paracetamol",
+//   "Dulcoflex",
+//   "Volini Spray",
+// ];

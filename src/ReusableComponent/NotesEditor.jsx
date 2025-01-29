@@ -13,16 +13,21 @@ import {
   FormatListBulleted,
   ArrowDropDown,
   Fullscreen,
+  FullscreenExit,
 } from "@mui/icons-material";
 import "../Style/_noteseditor.scss";
 
 const NotesEditor = () => {
   const editorRef = useRef(null);
+  const containerRef = useRef(null);
   const [activeStyles, setActiveStyles] = useState({
     bold: false,
     italic: false,
     bullet: false,
   });
+
+
+  const [content, setContent] = useState("");
 
   // Apply formatting to the selected text
   const applyFormat = (command) => {
@@ -39,8 +44,32 @@ const NotesEditor = () => {
     setActiveStyles({ bold, italic, bullet });
   };
 
+  
+   // Wrap selected text with a tag
+   const wrapSelectionWithTag = (tag) => {
+    const selection = window.getSelection();
+    if (!selection.rangeCount) return;
+
+    const range = selection.getRangeAt(0);
+    const selectedText = range.toString();
+
+    if (selectedText) {
+      const newNode = document.createElement(tag);
+      newNode.textContent = selectedText;
+      range.deleteContents();
+      range.insertNode(newNode);
+      setContent(editorRef.current.innerHTML);
+    }
+  };
+
+  // Update content on input
+  const handleInput = () => {
+    setContent(editorRef.current.innerHTML);
+    updateActiveStyles();
+  };
+
   return (
-    <Box className="notes-editor">
+    <Box  className="notes-editor" ref={containerRef}>
       {/* Toolbar */}
       <Box className="toolbar">
         <ButtonGroup variant="none">
@@ -65,13 +94,7 @@ const NotesEditor = () => {
           >
             <FormatListBulleted />
           </Button>
-          <Button>
-            <ArrowDropDown style={{ color: "black" }} />
-          </Button>
         </ButtonGroup>
-        <IconButton>
-          <Fullscreen />
-        </IconButton>
       </Box>
 
       {/* Editable Area */}
@@ -80,26 +103,16 @@ const NotesEditor = () => {
         contentEditable
         className="editor"
         placeholder="Enter your notes here..."
-        onInput={updateActiveStyles}
+        onInput={handleInput}
+        // onInput={updateActiveStyles}
         onFocus={updateActiveStyles}
         onBlur={updateActiveStyles}
       ></div>
-
-      {/* Checkboxes */}
-      <div className="advices-action">
-        <FormControlLabel
-          control={<Checkbox />}
-          label="Advised Home isolation and treatment as of now."
-        />
-        <FormControlLabel
-          control={<Checkbox />}
-          label="Streaming gargling"
-        />
-        <FormControlLabel
-          control={<Checkbox />}
-          label="Dr WhatsApp number +91 9771221270"
-        />
-      </div>
+      {/* Display HTML Content */}
+      <Box className="html-preview">
+        <strong>Text Output:</strong>
+        <div>{content}</div>
+      </Box>
     </Box>
   );
 };

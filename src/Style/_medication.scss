@@ -1,0 +1,105 @@
+body{
+    .medications-container {
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        padding: 16px;
+        width: 80%;
+        margin: 20px auto;
+        position: relative;
+      
+        .header {
+          font-size: 1.2rem;
+          font-weight: bold;
+          margin-bottom: 16px;
+          text-align: left;
+        }
+      
+        .search-container {
+          margin-bottom: 16px;
+      
+          .MuiOutlinedInput-root {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+          }
+        }
+      
+        .dropdown-container {
+          display: flex;
+          gap: 16px;
+          border: 1px solid #e0e0e0;
+          border-radius: 8px;
+          padding: 16px;
+          background-color: #f9f9f9;
+          position: absolute;
+          z-index: 20;
+          width: 90%;
+      
+          .dropdown-section {
+            flex: 1;
+      
+            .section-header {
+              display: flex;
+              flex-direction: column;
+              margin-bottom: 8px;
+              text-align: left;
+      
+              .section-title {
+                font-size: 0.9rem;
+                font-weight: bold;
+                color: #4caf50;
+                text-align: right;
+                  
+              }
+      
+              .section-subtitle {
+                font-size: 0.8rem;
+                color: #7d7d7d;
+              }
+            }
+      
+            .medication-list {
+              max-height: 300px;
+              overflow-y: auto;
+      
+              .list-item {
+                display: flex;
+                align-items: center;
+                padding: 5px 0;
+      
+                &:hover {
+                  background-color: #f1f1f1;
+                  border-radius: 4px;
+                }
+      
+                .pill-icon {
+                  background-color: #e0f7fa;
+                  color: #00b894;
+                  font-weight: bold;
+                  border-radius: 4px;
+                  padding: 4px 8px;
+                  margin-right: 16px;
+                  font-size: 0.9rem;
+                }
+      
+                .MuiListItemText-primary {
+                  font-weight: bold;
+                }
+      
+                .MuiListItemText-secondary {
+                  color: #7d7d7d;
+                  font-size: 0.9rem;
+                }
+              }
+            }
+            .close-button{
+              display: flex;
+              flex-direction: column;
+              align-items: flex-start;
+              padding: 0px;
+              margin: 0px ;
+            }
+          }
+        }
+      }
+}

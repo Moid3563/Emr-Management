@@ -8,6 +8,8 @@ import TableComponent from './ReusableComponent/TableComponent';
 import NotesComponent from './ReusableComponent/NotesComponent';
 import NotesEditor from './ReusableComponent/NotesEditor';
 import SearchSymptom from './ReusableComponent/SearchSymptom';
+import Medication from './ReusableComponent/Medication';
+import Vitals from './ReusableComponent/Vitals';
 // import SaveIcon from '@mui/icons-material/Save';
 
 // const sampleData = [
@@ -91,9 +93,11 @@ function App() {
       <br/>
       <br/>
       {/* <NotesComponent/> */}
-      <NotesEditor/>
+      {/* <NotesEditor/> */}
       {/* <TableComponent  columns={columns} rows={rows}/> */}
-      {/* <SearchSymptom/> */}
+      <Vitals/>
+      <SearchSymptom/>
+      <Medication/>
       <br/>
       <br/>
       {/* <SearchBarComponent

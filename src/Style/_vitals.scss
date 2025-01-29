@@ -1,0 +1,66 @@
+// .vitals-card {
+//     max-width: 400px;
+//     margin: 20px auto;
+//     padding: 20px;
+//     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+//     border-radius: 8px;
+  
+//     .title {
+//       font-weight: bold;
+//       margin-bottom: 20px;
+//       text-align: center;
+//     }
+  
+//     .input-field {
+//       margin-bottom: 16px;
+  
+//       .MuiOutlinedInput-root {
+//         border-radius: 8px;
+//       }
+  
+//       .MuiInputLabel-outlined {
+//         transform: translate(14px, 14px) scale(1);
+//       }
+  
+//       .MuiInputLabel-outlined.MuiInputLabel-shrink {
+//         transform: translate(14px, -6px) scale(0.75);
+//       }
+//     }
+//   }
+
+// VitalsForm.scss
+
+.vitals-form {
+    margin: 1rem auto;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 80%;
+  
+    &__header {
+      margin-bottom: 1rem;
+      font-weight: bold;
+      text-align: left;
+    
+    }
+  
+    &__field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+  
+      .unit {
+        color: #757575;
+        font-size: 0.875rem;
+        margin-left: 0.5rem;
+      }
+    }
+  
+    .MuiTextField-root {
+      width: 100%;
+    }
+    .typo{
+        text-align: left;
+    }
+  }
+  
